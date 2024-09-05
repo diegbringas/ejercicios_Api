@@ -1,0 +1,54 @@
+body {
+    background-color: #f8f9fa;
+}
+
+h1 {
+    color: #343a40;
+}
+
+form {
+    margin-top: 20px;
+}
+
+form input, form select {
+    margin-bottom: 10px;
+    
+}
+
+form textarea {
+    height: 50px;
+    
+}
+
+.container {
+    padding: 20px;
+}
+
+.list-ejercicios {
+    padding: 20px;
+}
+
+.collapsible {
+    background-color: #f1f1f1;
+    color: #333;
+    cursor: pointer;
+    padding: 10px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.active, .collapsible:hover {
+    background-color: #ddd;
+}
+
+.content {
+    padding: 0 18px;
+    display: none;
+    overflow: hidden;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+}

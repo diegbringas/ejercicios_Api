@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Ejercicio</title>
+</head>
+<body>
+    <h1>Editar Ejercicio</h1>
+    <form action="" method="POST">
+        <label for="nombre">Nombre del ejercicio:</label>
+        <input type="text" name="nombre" id="nombre" value="{{ exercise[1] }}" required>
+
+        <label for="patron">Patron de movimiento:</label>
+        <select name="patron" id="patron" required>{{ exercise[2] }}
+            <option value="Empuje" {% if exercise[2] == 'Empuje' %}selected{% endif %}>Empuje/option>
+            <option value="Jalon" {% if exercise[2] == 'Jalon' %}selected{% endif %}>Jalon</option>
+            <option value="Cadera" {% if exercise[2] == 'Cadera' %}selected{% endif %}>Flexión de Cadera</option>
+            <option value="Core" {% if exercise[2] == 'Core' %}selected{% endif %}>Core</option>
+            <option value="Rodilla" {% if exercise[2] == 'Rodilla' %}selected{% endif %}>Flexión de Rodilla</option>
+
+        </select>
+
+        <label for="dificultad">Dificultad:</label>
+        <select name="dificultad" id="dificultad" required>
+            <option value="Fácil" {% if exercise[3] == 'Fácil' %}selected{% endif %}>Fácil</option>
+            <option value="Moderado" {% if exercise[3] == 'Moderado' %}selected{% endif %}>Moderado</option>
+            <option value="Difícil" {% if exercise[3] == 'Difícil' %}selected{% endif %}>Difícil</option>
+        </select>
+
+        <label for="musculos">Musculos Activados:</label>
+        <select name="musculos" id="musculos" required>
+            <option value="Pecho" {% if exercise[4] == 'Pecho' %}selected{% endif %}>Pecho</option>
+            <option value="Espalda" {% if exercise[4] == 'Espalda' %}selected{% endif %}>Espalda</option>
+            <option value="DeltoideAnt" {% if exercise[4] == 'DeltoideAnt' %}selected{% endif %}>Deltoide Anterior</option>
+            <option value="DeltoidePost" {% if exercise[4] == 'DeltoidePost' %}selected{% endif %}>Deltoide Posterior</option>
+            <option value="CoreRecto" {% if exercise[4] == 'CoreRecto' %}selected{% endif %}>Recto Abdominal</option>
+            <option value="Trapecio" {% if exercise[4] == 'Trapecio' %}selected{% endif %}>Trapecio</option>
+
+        </select>
+
+        <button type="submit">Guardar cambios</button>
+    </form>
+</body>
+</html>
