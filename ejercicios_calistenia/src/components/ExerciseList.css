@@ -1,0 +1,10 @@
+.container {
+    margin-top: 40px;
+    padding: 20px;
+    background-color: gainsboro;
+}
+
+.table-striped thead tr th {
+    background-color: rgb(159, 159, 179); 
+  }
+  

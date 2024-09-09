@@ -1,0 +1,60 @@
+
+form {
+    max-width: 100vh; 
+    max-height: 200vh;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #d6d1d1;
+    border-radius: 20px;
+    margin-top: 10vh;
+  }
+
+.form-group label {
+  display: block;
+  margin: 20px 0px 10px 5px;
+  
+  font-weight: bold;
+  color: #201f1f;
+}
+
+.wrapper {
+    display: flex;
+    padding: 40px;
+    justify-content: center;
+    align-items: center;
+}
+
+.accordion {
+    width: 400px;
+
+}
+
+.item {
+    background: #372ccbbb;
+    margin-bottom: 5px;
+    padding: 10px 20px ;
+}
+
+.title {
+    color: black;
+    display: flex   ;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.content {
+    color: burlywood;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.5s cubic-bezier(0,1,0,1);
+}
+
+.content.show {
+    height: auto;
+    max-height: 999px;
+    transition: all 0.5s cubic-bezier(1,0,1,0);
+}
+
+.btn.btn-primary{
+    margin-top: 20px;
+}
