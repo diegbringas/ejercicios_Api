@@ -4,7 +4,6 @@ import './ExerciseForm.css';
 
 export const ExerciseForm = () => {
   const [exercises, setExercises] = useState([]);
-  const [selected, setSelected] = useState(null);
   const [newExercise, setNewExercise] = useState({
     nombre: '',
     patron: '',
@@ -21,23 +20,30 @@ export const ExerciseForm = () => {
     }
   };
 
-  // Llamada a fetchExercises
   useEffect(() => {
     fetchExercises();
   }, []);
 
   const handleChange = (e) => {
+    const { name, value } = e.target;
     setNewExercise({
       ...newExercise,
-      [e.target.name]: e.target.value,
+      [name]: value,
     });
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    
+    // Verificar que todos los campos tengan valor
+    if (!newExercise.nombre || !newExercise.patron || !newExercise.dificultad || !newExercise.musculos) {
+      alert("Por favor, complete todos los campos.");
+      return;
+    }
+
     try {
       await axios.post('http://localhost:5000/exercises', newExercise); 
-      fetchExercises(); // Actualiza la lista de ejercicios después de agregar uno nuevo
+      fetchExercises(); 
       setNewExercise({
         nombre: '',
         patron: '',
@@ -49,87 +55,77 @@ export const ExerciseForm = () => {
     }
   };
 
-  // const handleDelete = async (id) => {
-  //   try {
-  //     console.log('Ejercicio que se va a eliminar:', id); // Verificar el ID
-  
-  //     await axios.delete(`http://localhost:5000/exercises/${id}`);
-  
-  //     setExercises((prevExercises) => {
-  //       const updatedExercises = prevExercises.filter(exercise => exercise.id !== id);
-  //       console.log('Nuevo estado de ejercicios:', updatedExercises); 
-  //       return updatedExercises;
-  //     });
-  
-  //   } catch (error) {
-  //     console.error('Error al eliminar ejercicio:', error);
-  //   }
-  // };
-  
-  
-  
-
-  const toggle = (i) => {
-    if (selected === i) {
-      return setSelected(null);
-    }
-    setSelected(i);
-  };
-
   return (
     <form onSubmit={handleSubmit}>
       <div className="form-group">
         <label htmlFor="ejercicio">Nombre del ejercicio</label>
         <input 
-        type="text" 
-        className="form-control" 
-        name="nombre" 
-        value={newExercise.nombre}
-        onChange={handleChange}
+          type="text" 
+          className="form-control" 
+          name="nombre" 
+          value={newExercise.nombre}
+          onChange={handleChange}
+          placeholder="Ingrese el nombre del ejercicio"
+          required
         />
       </div>
+
       <div className="form-group">
         <label htmlFor="patron">Patrón de movimiento</label>
-        <input
-          type="text"
+        <select
           className="form-control"
           name="patron"
           value={newExercise.patron}
           onChange={handleChange}
-        />
+          required
+        >
+          <option value="">Seleccione un patrón</option> {/* Opción vacía */}
+          <option value="empuje">Empuje</option>
+          <option value="jalon">Jalón</option>
+          <option value="piernas">Piernas</option>
+        </select>
       </div>
+
       <div className="form-group">
         <label htmlFor="dificultad">Dificultad</label>
-        <input
-          type="text"
+        <select
           className="form-control"
           name="dificultad"
           value={newExercise.dificultad}
           onChange={handleChange}
-        />
+          required
+        >
+          <option value="">Seleccione una dificultad</option> {/* Opción vacía */}
+          <option value="basico">Básico</option>
+          <option value="intermedio">Intermedio</option>
+          <option value="avanzado">Avanzado</option>
+        </select>
       </div>
 
       <div className="form-group">
         <label htmlFor="musculos">Músculos</label>
-        <input
-          type="text"
+        <select
           className="form-control"
           name="musculos"
           value={newExercise.musculos}
           onChange={handleChange}
-        />
+          required
+        >
+          <option value="">Seleccione un músculo</option> {/* Opción vacía */}
+          <option value="pecho">Pecho</option>
+          <option value="espalda">Espalda</option>
+          <option value="dorsal">Dorsal</option>
+          <option value="biceps">Bíceps</option>
+          <option value="triceps">Tríceps</option>
+          <option value="trapecio">Trapecio</option>
+          <option value="deltoide">Deltoide</option>
+          <option value="core">Core</option>
+        </select>
       </div>
 
-
-      
-      
       <button type="submit" className="btn btn-primary">
         Agregar Ejercicio
       </button>
-
-
-
-      
     </form>
   );
 };

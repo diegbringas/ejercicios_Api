@@ -1,5 +1,58 @@
 body {
-    background-color: black;
-    color: white;
-    padding: 1% 2%;
+  background-color: black;
+  color: white;
+  padding: 1% 2%;
 }
+
+.h1-app {
+  font-family: "Unlock", serif;
+  font-weight: 400;
+  font-style: normal;
+  position: relative;
+  font-size: 2.5rem; /* Ajusta el tamaño del título según tu diseño */
+  font-weight: bold;
+  text-align: center;
+  
+}
+
+.h1-app::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -10px; /* Distancia de la línea desde el título */
+    width: 190vh; 
+    height: 0.5px; /* Grosor de la línea */
+    background-color: white; /* Color de la línea */
+    transition: width 0.4s ease; /* Animación para expandir la línea */ 
+}
+.titulo-1{
+    gap: 10rem;
+    display: flex;
+}
+.titulo-1 p{
+    text-align: center;
+    margin-top: 20px;
+
+}
+.Add-1 {
+    margin-top: 50px;
+    align-items: center;
+    gap: 20px;
+}
+.Add-titulo{
+    margin: auto;
+}
+
+.titulop2{
+    padding-top: 20px;
+}
+
+
+
+.exercise-img{
+    width: 200px;
+    height: auto;
+    border-radius: 20px;
+}
+
