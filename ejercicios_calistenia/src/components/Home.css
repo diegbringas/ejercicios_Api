@@ -1,0 +1,72 @@
+.hero {
+    position: relative;
+    width: 100%;
+    overflow: hidden; 
+}
+
+.hero-1 {
+    width: 55%;
+    height: 80vh; /* Altura del contenedor (puedes ajustarla según sea necesario) */
+    background-image: url('../assets/images/WallpaperCalisthenic.jpg'); /* Usar la imagen como fondo */
+    background-size: cover; /* Cubrir todo el contenedor */
+    padding: 100px 60px 50px 30px
+
+}
+
+.hero-1 h1{
+    color: rgb(249, 249, 249);
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-weight: 500;
+    margin-bottom: 50px;
+}
+
+.hero-1 p{
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    padding-left: 20px;
+    font-weight: 700;
+}
+
+.hero-2 {
+    width: 55%;
+    height: 80vh; /* Altura del contenedor (puedes ajustarla según sea necesario) */
+    background-image: url('../assets/images/app-exercise.png'); /* Usar la imagen como fondo */
+    background-size: cover; /* Cubrir todo el contenedor */
+    padding: 20px; 
+}
+
+.hero-2 p {
+   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+   font-weight: bold;
+   font-size: 2em;
+   color: #3e168a;
+   background-color: aliceblue;
+   margin-top: 300px;
+}
+
+.home{
+    display: flex;
+}
+
+.hero-image {
+    width: 100%;
+    height: auto; /* Mantener la proporción */
+}
+
+
+
+.cta-button {
+    padding: 10px 20px;
+    margin-left: 20px;
+    margin-bottom: 30px;
+    background-color: #1e90ff;
+    color: #3e168a;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #00bfff;
+}

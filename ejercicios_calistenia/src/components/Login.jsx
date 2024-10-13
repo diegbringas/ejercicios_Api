@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import './Login.css'
 
 const Login = () => {
     const [email, setEmail] = useState('');
@@ -15,6 +16,8 @@ const Login = () => {
                 password,
             });
             alert(response.data.message);
+            // Guardar el token en el localStorage
+            localStorage.setItem('token', response.data.token);
             navigate('/add-exercise');
         } catch (error) {
             alert(error.response.data.description || "Error en el inicio de sesión.");
@@ -24,8 +27,20 @@ const Login = () => {
     return (
         <form onSubmit={handleLogin}>
             <h1>Iniciar Sesión</h1>
-            <input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} required />
-            <input type="password" placeholder="Contraseña" value={password} onChange={(e) => setPassword(e.target.value)} required />
+            <input
+                type="email"
+                placeholder="Email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+            />
+            <input
+                type="password"
+                placeholder="Contraseña"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                required
+            />
             <button type="submit">Iniciar Sesión</button>
         </form>
     );

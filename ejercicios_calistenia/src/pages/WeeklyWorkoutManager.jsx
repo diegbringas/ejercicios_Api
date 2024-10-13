@@ -1,11 +1,10 @@
-import EntrenamientosSemanal from "../components/WorkoutManager";
+import EntrenamientoSemanal from "../components/WorkoutManager";
 
 const WeeklyWorkoutManager = () => {
   return (
     <div className='container'>
-      <h1>Administrador de Entrenemiento</h1>
 
-      <EntrenamientosSemanal />
+      <EntrenamientoSemanal />
 
     </div>
   );

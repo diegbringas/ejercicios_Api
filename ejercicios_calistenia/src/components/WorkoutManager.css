@@ -2,11 +2,13 @@
 /* Estilo general */
 body {
     font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 20px;
+   
 }
 
-/* Estilo de la tabla */
+.inicio{
+    margin-top: 50px;
+}
+
 table {
     width: 100%;
     border-collapse: collapse;
@@ -60,6 +62,8 @@ li {
     align-items: center;
     margin: 5px 0;
 }
+
+
 
 /* Responsividad */
 @media (max-width: 600px) {

@@ -1,7 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+  
+
 body {
   background-color: black;
   color: white;
-  padding: 1% 2%;
+  
+}
+
+.h1-cabecera{
+    background: linear-gradient(135deg, #1e90ff, #273170); /* Gradiente azul */
+    font-size: 15px;
+    margin-bottom: 0;
+    padding: 1em;
+    font-weight: 800;
+    text-align: center;
+    color: #88d651;
 }
 
 .h1-app {

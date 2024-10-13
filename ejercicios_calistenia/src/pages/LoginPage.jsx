@@ -3,8 +3,15 @@ import Login from "../components/Login";
 
 const ExerciseListPage = () => {
   return (
-    <div className='container'>
-      <h1>Login</h1>
+    <div className='container' style={{ 
+      padding: '80px',
+      
+    }}>
+      <h1 
+      style={{ 
+      textAlign: 'center',
+      }}
+      >Login</h1>
 
       <Login />
 
